@@ -11,8 +11,8 @@ def home(request):
 
 def register(request):
     if request.method == 'POST':
-        first_name = request.POST.get('first_name')
-        last_name = request.POST.get('last_name')
+        first_name = request.POST.get('firstname')
+        last_name = request.POST.get('lastname')
         username = request.POST.get('username')
         email = request.POST.get('email')
         password = request.POST.get('password')
@@ -23,7 +23,7 @@ def register(request):
             return render(request, 'register.html', {'error': 'Username already exists'})
         if User.objects.filter(email=email).exists():
             return render(request, 'register.html', {'error': 'Email already exists'})
-        user = User.objects.create_user(username=username, password=password, email=email, first_name=first_name, last_name=last_name)
+        user = User.objects.create_user(first_name=first_name, last_name=last_name, username=username, password=password, email=email)
         user.save()
         messages.success(request, 'User registered successfully')
         return redirect('login')
