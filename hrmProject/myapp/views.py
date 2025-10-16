@@ -31,9 +31,17 @@ def register(request):
 
 
 def login_user(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            messages.success(request, 'Logged in successfully')
+            return redirect('home')
+        else:
+            return render(request, 'login.html', {'error': 'Invalid credentials'})
     return render(request, 'login.html')
-
-
 
 def forgot_password_request(request):
     if request.method == "POST":
@@ -65,3 +73,9 @@ def forgot_password(request):
             return render(request, 'forgot_password.html', {'error': 'User not found'})
         
     return render(request, 'forgot_password.html', {'email': email})
+
+
+def logout_user(request):
+    logout(request)
+    messages.success(request, 'Logged out successfully')
+    return redirect('home') 
