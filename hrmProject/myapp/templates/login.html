@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 {% extends 'base.html' %}
 {% block title %}Login - My HRM System{% endblock title %}
 
@@ -35,6 +36,58 @@
           </div>
         </div>
       </div>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-card {
+            width: 300px;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+
+       
+    </style>
+</head>
+<body>
+    
+    <div class="login-card">
+
+        <h1>Login</h1>
+        <form>
+        <label for="name">Username</label><br>
+        <input type="text" placeholder="Enter Username" /></br>
+        <label for="password">Password</label><br>
+
+        <input type="password" placeholder="Enter Password" /><br />
+        <button class="login-btn">Login</button>
+
+        </form>
+    
+    </div>
+    
+
+        <p class="forgotpassword">Forgot Password <a href="">Click here!</a></p>
+
+    
+
+
+>>>>>>> Stashed changes
     </div>
   </div>
 {% endblock content %}

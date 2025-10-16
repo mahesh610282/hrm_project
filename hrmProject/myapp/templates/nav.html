@@ -19,11 +19,17 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
           <li><a class="dropdown-item" href="{% url 'register' %}">Register</a></li>
             <li><a class="dropdown-item" href="{% url 'login' %}">Login</a></li>
+<<<<<<< Updated upstream
             {% if user.is_authenticated %}
             <li><a class="dropdown-item" href="">Dashboard</a></li>
             <li><a class="dropdown-item" href="{% url 'home' %}">{{ user.username }}</a></li>
             <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
             {% endif %}
+=======
+            <li><a class="dropdown-item" href="{% url 'register' %}">Register</a></li>
+            <!-- <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li> -->
+
+>>>>>>> Stashed changes
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
